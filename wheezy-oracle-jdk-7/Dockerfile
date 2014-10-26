@@ -1,6 +1,6 @@
 FROM debian:wheezy
 MAINTAINER atomi <http:/twitter.com/atomi>
-RUN alias c="clear" && alias ll="ls -lha"
+RUN printf 'alias ll="ls --color=auto -lha"\nalias c="clear"' >> /root/.bashrc
 
 RUN \
   echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee -a /etc/apt/sources.list && \
