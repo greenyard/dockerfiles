@@ -20,4 +20,4 @@ EXPOSE 4000
 
 WORKDIR /data
 
-ENTRYPOINT ["jekyll", "serve"]
+ENTRYPOINT ["jekyll"]
