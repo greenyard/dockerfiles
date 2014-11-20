@@ -19,4 +19,4 @@ RUN	cabal update && \
 
 #   cabal install elm-reactor # not working
 
-RUN ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/
+RUN bash -c "ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/"
