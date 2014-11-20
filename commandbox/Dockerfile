@@ -1,7 +1,5 @@
 FROM atomi/wheezy-oracle-jdk:8
 MAINTAINER atomi <http:/twitter.com/atomi>
-RUN printf 'alias ll="ls --color=auto -lha"\nalias c="clear"' >> /root/.bashrc
-
 
 RUN apt-get update -y && \
 		apt-get install --no-install-recommends -yq curl java-common && \
