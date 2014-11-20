@@ -1,6 +1,5 @@
 FROM debian:wheezy
 MAINTAINER atomi <http:/twitter.com/atomi>
-RUN printf 'alias ll="ls --color=auto -lha"\nalias c="clear"' >> /root/.bashrc
 
 ENV NODEJS_VERSION 0.10.31
 
