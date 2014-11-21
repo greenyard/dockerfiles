@@ -12,4 +12,4 @@ DATA folder is in ```/data```
 
 To RUN this container in your webroot:
 
-```docker run -p 4000:4000 -v `pwd`:/data atomi/jekyll serve --host=0.0.0.0 --force_polling```
+```docker run --rm -p 4000:4000 -v `pwd`:/data atomi/jekyll serve --host=0.0.0.0 --force_polling```
