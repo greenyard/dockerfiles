@@ -16,4 +16,5 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-$TOMCAT_MAJOR_VERSION/
 RUN find $CATALINA_HOME/webapps/* ! -name 'ROOT' -type d -exec rm -rf {} +
 
 EXPOSE 8080
-CMD ["$CATALINA_HOME/bin/catalina.sh", "run"]
+
+CMD $CATALINA_HOME/bin/catalina.sh run
