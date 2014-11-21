@@ -27,3 +27,5 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	  
 RUN npm install -g npm@"$NPM_VERSION" && \
 	  npm cache clear
+
+WORKDIR /data
