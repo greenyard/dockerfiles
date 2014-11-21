@@ -1,5 +1,4 @@
 FROM ruby
-RUN printf 'alias ll="ls --color=auto -lha"\nalias c="clear"' >> /root/.bashrc
 
 RUN apt-get update \
   && apt-get install -y \
