@@ -17,7 +17,7 @@ To RUN this container in your webroot:
 
 You may want to add an alias to make it easier to scaffold or add
 
-```alias box="docker run -v `pwd`:/data atomi/commandbox"```
+```alias box="docker run --rm -v `pwd`:/data atomi/commandbox"```
 
 Then run normally in your project folder
 
