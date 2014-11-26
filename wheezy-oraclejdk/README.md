@@ -4,4 +4,4 @@
  * Uses the smaller base image debian/wheezy
  * Removes apt-get install artifacts
 
-```docker run atomi/wheezy-oracle-jdk java -version```
+```docker run atomi/wheezy-oraclejdk java -version```
