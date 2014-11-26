@@ -1,4 +1,4 @@
-FROM atomi/wheezy-oracle-jdk:8
+FROM atomi/wheezy-oraclejdk:8
 MAINTAINER atomi <http:/twitter.com/atomi>
 
 RUN apt-get update -y && \

@@ -1,7 +1,7 @@
-FROM atomi/wheezy-oracle-jdk:8
+FROM atomi/wheezy-oraclejdk:8
 MAINTAINER atomi <http:/twitter.com/atomi>
 
-ENV JETTY_VERSION 8.1.16.v20140903
+ENV JETTY_VERSION 9.2.3.v20140905
 ENV JETTY_HOME /jetty
 
 # Install Jetty TODO: check md5

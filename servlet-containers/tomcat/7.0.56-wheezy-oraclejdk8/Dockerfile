@@ -1,4 +1,4 @@
-FROM atomi/wheezy-oracle-jdk:8
+FROM atomi/wheezy-oraclejdk:8
 MAINTAINER atomi <http:/twitter.com/atomi>
 
 ENV TOMCAT_MAJOR_VERSION 7

@@ -1,4 +1,4 @@
-FROM atomi/wheezy-oracle-jdk:8
+FROM atomi/wheezy-oraclejdk:8
 MAINTAINER atomi <http:/twitter.com/atomi>
 
 ENV RESIN_VERSION 4.0.41

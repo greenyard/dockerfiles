@@ -1,4 +1,4 @@
-FROM atomi/wheezy-oracle-jdk:8
+FROM atomi/wheezy-oraclejdk:8
 
 ENV GRADLE_HOME /usr/local
 ENV GRADLE_VERSION 2.2
