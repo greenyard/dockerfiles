@@ -6,14 +6,4 @@ ENV CATALINA_OPTS -javaagent:$CATALINA_HOME/lib/railo-inst.jar
 # Download and untar Railo jars
 RUN wget --no-verbose -O - http://www.getrailo.org/down.cfm?item=/railo/remote/download42/$RAILO_VERSION/custom/all/railo-$RAILO_VERSION-jars.tar.gz | tar zxf - -C $CATALINA_HOME/lib --strip-components=1
 
-# Use /data for easier volume handling
-RUN ln -s $CATALINA_HOME/webapps/ROOT /data
-
-# Clean out ROOT and add our workspace
-WORKDIR /data
-ONBUILD RUN rm -rf *
-ONBUILD ADD . /data/
-
-EXPOSE 8080
-
 CMD $CATALINA_HOME/bin/catalina.sh run
