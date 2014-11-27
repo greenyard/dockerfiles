@@ -6,7 +6,7 @@ ENV NODE_VERSION 0.10.33
 ENV NPM_VERSION 2.1.7
 
 RUN apt-get update && \
-		apt-get install --no-install-recommends -yq curl build-essential && \
+		apt-get install --no-install-recommends -yq curl build-essential ca-certificates && \
 		apt-get clean && \
 		rm -rf \
 			/var/lib/apt/lists/* \
