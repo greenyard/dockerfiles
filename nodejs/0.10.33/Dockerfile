@@ -27,6 +27,6 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	  
 RUN npm install -g npm@"$NPM_VERSION" && \
 	  npm cache clear && \
-	  npm install -g less@beta sass which bower grunt grunt-cli yo generator-angular
+	  npm install -g less@beta sass which bower grunt-cli yo generator-angular
 
 WORKDIR /data
