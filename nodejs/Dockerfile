@@ -1,6 +1,4 @@
-FROM atomi/nodejs:0.10.33
+FROM atomi/nodejs:latest
 
-RUN npm install -g less@beta sass which bower grunt-cli gulp yo generator-angular matchdep wiki
-
-EXPOSE 3000
-EXPOSE 35729
+RUN npm install -g less@beta sass which bower grunt-cli gulp yo generator-angular matchdep wiki brunch && \
+		npm cache clear
