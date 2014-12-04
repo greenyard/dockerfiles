@@ -1,25 +1,25 @@
 FROM node:latest
 
 RUN npm install -g less@beta \ 
-									 sass \
-									 which \
-									 bower \
-									 grunt-cli \
-									 gulp \
-									 yo \
-									 generator-angular \
-									 matchdep \
-									 wiki \
-									 brunch \
-									 coffee-script && \
-		npm cache clear
+                   sass \
+                   which \
+                   bower \
+                   grunt-cli \
+                   gulp \
+                   yo \
+                   generator-angular \
+                   matchdep \
+                   wiki \
+                   brunch \
+                   coffee-script && \
+    npm cache clear
 RUN apt-get update && \
     apt-get install -y \
-   		tmux \
-    	zsh \
-    	htop \
-    	vim \
-    	git && \
+      tmux \
+      zsh \
+      htop \
+      vim \
+      git && \
     rm -rf \ 
       /var/lib/apt/lists/* \
       /tmp/*
