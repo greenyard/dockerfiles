@@ -24,7 +24,11 @@ RUN apt-get update && \
       /var/lib/apt/lists/* \
       /tmp/*
 
-WORKDIR /data
+# Install ZSH and oh-my-zsh and grab my dotfiles
+RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh && \
+    curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.tmux.conf > /root/.tmux.conf && \
+    curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.vimrc > /root/.vimrc
 
-# Install ZSH and oh-my-zsh
-RUN curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh
+WORKDIR /data
+    
+ENTRYPOINT ["tmux"]
