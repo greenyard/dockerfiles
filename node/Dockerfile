@@ -27,6 +27,4 @@ RUN apt-get update && \
 WORKDIR /data
 
 # Install ZSH and oh-my-zsh
-RUN chsh -s $(which zsh) root && curl -L http://install.ohmyz.sh | zsh
-
-ENTRYPOINT /bin/zsh
+RUN curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh
