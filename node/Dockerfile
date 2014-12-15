@@ -11,8 +11,9 @@ RUN npm install -g less@beta \
                    matchdep \
                    wiki \
                    brunch \
-                   ionic \
                    nodemon \
+                   ionic \
+                   cordova \                   
                    coffee-script && \
     npm cache clear
 RUN apt-get update && \
