@@ -37,11 +37,10 @@ RUN	cabal update && \
 		cabal install cabal-install && \
 		cabal install elm elm-repl elm-get
 
+RUN bash -c "ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/"
 RUN elm-get install evancz/elm-html
 
 # Install ZSH and oh-my-zsh and grab my dotfiles
 RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh && \
     curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.tmux.conf > /root/.tmux.conf && \
     curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.vimrc > /root/.vimrc
-
-RUN bash -c "ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/"
