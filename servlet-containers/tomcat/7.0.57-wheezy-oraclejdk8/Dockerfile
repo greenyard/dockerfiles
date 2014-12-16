@@ -2,7 +2,7 @@ FROM atomi/wheezy-oraclejdk:8
 MAINTAINER atomi <http:/twitter.com/atomi>
 
 ENV TOMCAT_MAJOR_VERSION 7
-ENV TOMCAT_MINOR_VERSION 7.0.56
+ENV TOMCAT_MINOR_VERSION 7.0.57
 ENV CATALINA_HOME /tomcat
 
 # Install Tomcat
