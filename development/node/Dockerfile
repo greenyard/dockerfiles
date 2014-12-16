@@ -7,7 +7,9 @@ RUN npm install -g less@beta \
                    grunt-cli \
                    gulp \
                    yo \
-                   generator-angular \
+                   generator-angular generator-angular-fullstack generator-angular-component \
+                   generator-gulp-angular generator-gulp-webapp \
+                   generator-chrome-extension generator-h5bp \
                    matchdep \
                    wiki \
                    brunch \
@@ -19,11 +21,8 @@ RUN npm install -g less@beta \
 
 RUN apt-get update && \
 		apt-get install -yq \
-			curl  \
-			haskell-platform node \
-			libghc-terminfo-dev \
-			tmux \
-			zsh \
+			curl httpie \
+			zsh tmux \
 			htop \
 			vim \
 			git && \
@@ -31,13 +30,6 @@ RUN apt-get update && \
 		rm -rf \ 
 		  /var/lib/apt/lists/* \
 		  /tmp/*
-
-# cabal install elm-reactor # not working
-RUN	cabal update && \
-		cabal install cabal-install && \
-		cabal install elm elm-repl elm-get
-
-RUN bash -c "ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/"
 
 # Install ZSH and oh-my-zsh and grab my dotfiles
 RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh && \
