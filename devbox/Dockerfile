@@ -32,13 +32,12 @@ RUN apt-get update && \
 		  /var/lib/apt/lists/* \
 		  /tmp/*
 
-#   cabal install elm-reactor # not working
+# cabal install elm-reactor # not working
 RUN	cabal update && \
 		cabal install cabal-install && \
 		cabal install elm elm-repl elm-get
 
 RUN bash -c "ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/"
-RUN elm-get install evancz/elm-html
 
 # Install ZSH and oh-my-zsh and grab my dotfiles
 RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh && \
