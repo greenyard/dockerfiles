@@ -1,17 +1,21 @@
 FROM atomi/node
 
-RUN apt-get update && \
-		apt-get install -yq \
-			haskell-platform node \
-			libghc-terminfo-dev \
-		apt-get clean && \
-		rm -rf \ 
-		  /var/lib/apt/lists/* \
-		  /tmp/*
+ENV HASKELL_PLATFORM_VERSION 2014.2.0.0
 
-# cabal install elm-reactor # not working
-RUN	cabal update && \
-		cabal install cabal-install && \
-		cabal install elm elm-repl elm-get
+# testing cabal needs at least GLIBC_2.14 libc6-dev
+RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" | tee -a /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y zlib1g-dev libgmp10 libghc-terminfo-dev && \
+    rm -rf \ 
+      /var/lib/apt/lists/* \
+      /tmp/*
 
-RUN bash -c "ln -s /root/.cabal/bin/{elm,elm-doc,elm-get,elm-repl} /usr/local/bin/"
+RUN curl -L https://www.haskell.org/platform/download/$HASKELL_PLATFORM_VERSION/haskell-platform-$HASKELL_PLATFORM_VERSION-unknown-linux-x86_64.tar.gz | tar zx
+RUN /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
+
+RUN cabal update && \
+    cabal install -j elm elm-repl elm-get elm-reactor
+
+RUN echo "export PATH=/root/.cabal/bin:$PATH" >> /root/.zshrc
+
+CMD ["tmux"]
