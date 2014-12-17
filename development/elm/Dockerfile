@@ -17,6 +17,3 @@ RUN cabal update && \
     cabal install -j elm elm-repl elm-get elm-reactor elm-make
 
 RUN echo "export PATH=/root/.cabal/bin:$PATH" >> /root/.zshrc
-
-WORKDIR /data
-CMD ["tmux"]
