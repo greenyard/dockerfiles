@@ -37,5 +37,7 @@ RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/i
     curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.tmux.conf > /root/.tmux.conf && \
     curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.vimrc > /root/.vimrc
 
+RUN echo 'alias bower="bower --allow-root"' >> /root/.zshrc
+
 WORKDIR /data
 CMD ["tmux"]
