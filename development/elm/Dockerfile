@@ -18,4 +18,5 @@ RUN cabal update && \
 
 RUN echo "export PATH=/root/.cabal/bin:$PATH" >> /root/.zshrc
 
+WORKDIR /data
 CMD ["tmux"]
