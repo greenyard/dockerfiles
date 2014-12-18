@@ -14,6 +14,6 @@ RUN curl -L https://www.haskell.org/platform/download/$HASKELL_PLATFORM_VERSION/
 RUN /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
 
 RUN cabal update && \
-    cabal install -j elm elm-repl elm-get elm-reactor elm-make
+    cabal install -j elm elm-repl elm-get elm-reactor elm-make elm-package
 
 RUN echo "export PATH=/root/.cabal/bin:$PATH" >> /root/.zshrc
