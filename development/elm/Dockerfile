@@ -10,7 +10,7 @@ RUN echo "deb http://http.us.debian.org/debian/ testing non-free contrib main" |
       /var/lib/apt/lists/* \
       /tmp/*
 
-RUN curl -L https://www.haskell.org/platform/download/$HASKELL_PLATFORM_VERSION/haskell-platform-$HASKELL_PLATFORM_VERSION-unknown-linux-x86_64.tar.gz | tar zx
+RUN curl -L https://www.haskell.org/platform/download/$HASKELL_PLATFORM_VERSION/haskell-platform-$HASKELL_PLATFORM_VERSION-unknown-linux-x86_64.tar.gz | tar zx -C /
 RUN /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
 
 RUN cabal update && \
