@@ -2,6 +2,7 @@ FROM node:slim
 
 RUN npm install -g less@beta \ 
                    sass \
+                   http-server \
                    which \
                    bower \
                    grunt-cli \
