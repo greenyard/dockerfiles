@@ -22,3 +22,4 @@ RUN \
     /usr/share/man/*
 
 RUN echo "JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /etc/environment
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
