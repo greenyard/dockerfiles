@@ -48,4 +48,4 @@ RUN \
     ln -s $ZDOTDIR/.zshrc ~/.zshrc
 
 WORKDIR /data
-CMD ["tmux"]
+CMD ["zsh"]
