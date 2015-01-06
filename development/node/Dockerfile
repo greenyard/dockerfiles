@@ -23,16 +23,16 @@ RUN npm install -g less@beta \
     npm cache clear
 
 RUN apt-get update && \
-		apt-get install -yq \
-			curl httpie \
-			zsh tmux \
-			htop \
-			vim \
-			git && \
-		apt-get clean && \
-		rm -rf \ 
-		  /var/lib/apt/lists/* \
-		  /tmp/*
+    apt-get install -yq \
+      curl httpie \
+      zsh tmux \
+      htop \
+      vim \
+      git && \
+    apt-get clean && \
+    rm -rf \ 
+      /var/lib/apt/lists/* \
+      /tmp/*
 
 # Install ZSH and oh-my-zsh and grab my dotfiles
 RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh && \
