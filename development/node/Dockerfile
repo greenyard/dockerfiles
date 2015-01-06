@@ -34,12 +34,18 @@ RUN apt-get update && \
       /var/lib/apt/lists/* \
       /tmp/*
 
-# Install ZSH and oh-my-zsh and grab my dotfiles
-RUN curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | zsh && \
-    curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.tmux.conf > /root/.tmux.conf && \
-    curl https://gist.githubusercontent.com/atomi/3b0f64c1ca585b6f1e36/raw/.vimrc > /root/.vimrc
+# Shell Environment
+ENV ZDOTDIR /root/.dotfiles
 
-RUN echo 'alias bower="bower --allow-root"' >> /root/.zshrc
+RUN printf "ZDOTDIR=$ZDOTDIR" >> /etc/zsh/zshenv
+RUN git clone https://gist.github.com/f74a3f71655940bb849e.git "$ZDOTDIR" && \
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "$ZDOTDIR/.zprezto"
+
+RUN \
+    ln -s $ZDOTDIR/.gitconfig ~/.gitconfig && \
+    ln -s $ZDOTDIR/.tmux.conf ~/.tmux.conf && \
+    ln -s $ZDOTDIR/.vimrc ~/.vimrc && \
+    ln -s $ZDOTDIR/.zshrc ~/.zshrc
 
 WORKDIR /data
 CMD ["tmux"]
