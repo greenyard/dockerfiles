@@ -12,6 +12,8 @@ RUN npm install -g less@beta \
                    generator-gulp-angular generator-gulp-webapp \
                    generator-chrome-extension generator-h5bp \
                    react-tools \
+                   browserify \
+                   uglify-js \
                    livereload \
                    matchdep \
                    protractor \
