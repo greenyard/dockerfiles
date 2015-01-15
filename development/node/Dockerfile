@@ -21,7 +21,8 @@ RUN npm install -g less@beta \
                    brunch \
                    nodemon \
                    ionic \
-                   cordova \                   
+                   cordova \         
+                   psi \
                    coffee-script && \
     npm cache clear
 

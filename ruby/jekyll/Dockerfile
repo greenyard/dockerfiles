@@ -1,4 +1,4 @@
-FROM ruby
+FROM ruby:1.9.3-wheezy
 
 RUN apt-get update \
   && apt-get install -y \
