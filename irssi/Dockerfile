@@ -21,4 +21,4 @@ RUN \
     /usr/share/info/* \
     /usr/share/man/*
 
-CMD irssi
+CMD TERM=screen irssi
