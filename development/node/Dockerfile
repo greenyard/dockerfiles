@@ -10,7 +10,7 @@ RUN npm install -g less@beta \
                    yo \
                    generator-angular generator-angular-fullstack generator-angular-component \
                    generator-gulp-angular generator-gulp-webapp \
-                   generator-chrome-extension generator-h5bp \
+                   generator-chrome-extension generator-h5bp generator-brisket \
                    react-tools \
                    browserify \
                    uglify-js \
