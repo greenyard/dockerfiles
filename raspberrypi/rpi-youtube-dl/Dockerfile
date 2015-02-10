@@ -8,3 +8,5 @@ RUN \
 RUN pip install --upgrade youtube_dl
 
 WORKDIR /data
+
+ENTRYPOINT ["youtube-dl"]
