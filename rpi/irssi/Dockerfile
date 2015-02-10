@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian:jessie-2015-02-09
 
 RUN \
   apt-get update -y && \
