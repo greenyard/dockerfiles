@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:0.12.0-slim
 
 RUN npm install -g less@beta \ 
                    sass \
