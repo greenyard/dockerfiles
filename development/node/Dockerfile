@@ -1,55 +1,11 @@
-FROM node:0.12.0-slim
+FROM node:0.10.36
 
-RUN npm install -g less@beta \ 
-                   sass \
-                   http-server \
-                   which \
-                   bower \
-                   grunt-cli \
-                   gulp \
-                   yo \
-                   generator-angular generator-angular-fullstack generator-angular-component \
-                   generator-gulp-angular generator-gulp-webapp \
-                   generator-chrome-extension generator-h5bp generator-brisket \
-                   react-tools \
-                   browserify \
-                   uglify-js \
-                   livereload \
-                   matchdep \
-                   protractor \
-                   wiki \
-                   brunch \
-                   nodemon \
-                   ionic \
-                   cordova \         
-                   psi \
-                   coffee-script && \
-    npm cache clear
+RUN npm install -g node-gyp less@beta node-sass http-server
+RUN npm install -g bower grunt-cli gulp yo
+RUN npm install -g jshint react-tools browserify uglify-js
+RUN npm install -g livereload nodemon ionic protractor
+RUN npm install -g matchdep coffee-script
 
-RUN apt-get update && \
-    apt-get install -yq \
-      curl httpie \
-      zsh tmux \
-      htop \
-      vim \
-      git && \
-    apt-get clean && \
-    rm -rf \ 
-      /var/lib/apt/lists/* \
-      /tmp/*
-
-# Shell Environment
-ENV ZDOTDIR /root/.dotfiles
-
-RUN printf "ZDOTDIR=$ZDOTDIR" >> /etc/zsh/zshenv
-RUN git clone https://gist.github.com/f74a3f71655940bb849e.git "$ZDOTDIR" && \
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "$ZDOTDIR/.zprezto"
-
-RUN \
-    ln -s $ZDOTDIR/.gitconfig ~/.gitconfig && \
-    ln -s $ZDOTDIR/.tmux.conf ~/.tmux.conf && \
-    ln -s $ZDOTDIR/.vimrc ~/.vimrc && \
-    ln -s $ZDOTDIR/.zshrc ~/.zshrc
+RUN npm cache clear
 
 WORKDIR /data
-CMD ["zsh"]
