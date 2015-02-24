@@ -1,0 +1,10 @@
+FROM resin/rpi-raspbian:jessie-2015-02-09
+
+RUN \
+  apt-get update -y && \
+  apt-get install -yq --no-install-recommends \
+  python-pip
+
+RUN pip install --upgrade speedtest-cli
+
+ENTRYPOINT ["speedtest-cli"]
