@@ -5,6 +5,7 @@ RUN npm install -g bower grunt-cli gulp yo
 RUN npm install -g jshint react-tools browserify uglify-js
 RUN npm install -g livereload nodemon ionic protractor
 RUN npm install -g matchdep coffee-script
+RUN npm install -g typescript
 
 RUN npm cache clear
 
