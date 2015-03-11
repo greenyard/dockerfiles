@@ -6,6 +6,9 @@ RUN \
   irssi \
   irssi-scripts \
   screen \
+  libwww-perl \
+  libwww-curl-perl \
+  libjson-perl \
   libnet-twitter-perl \
   libwww-shorten-perl \
   libjson-any-perl \
