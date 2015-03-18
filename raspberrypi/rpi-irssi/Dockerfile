@@ -24,5 +24,7 @@ RUN \
     /usr/share/info/* \
     /usr/share/man/*
 
-CMD TERM=screen irssi
-
+# LOCALTIME
+RUN rm /etc/localtime && \
+    cp -p /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && \
+    printf America/Los_Angeles > /etc/timezone
