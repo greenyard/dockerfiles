@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie-2015-02-18
+FROM resin/rpi-raspbian:jessie-2015-07-15
 
 RUN \
   apt-get update -y && \
@@ -10,6 +10,7 @@ RUN \
   libwww-perl \
   libwww-curl-perl \
   libjson-perl \
+  liburi-query-perl \
   libnet-twitter-perl \
   libwww-shorten-perl \
   libjson-any-perl \
@@ -29,3 +30,8 @@ RUN \
 RUN rm /etc/localtime && \
     cp -p /usr/share/zoneinfo/America/Los_Angeles /etc/localtime && \
     printf America/Los_Angeles > /etc/timezone
+
+# SUPPORT 256 COLOR
+ENV TERM=xterm-256color
+
+CMD ["irssi"]
