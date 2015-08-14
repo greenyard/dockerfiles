@@ -1,4 +1,11 @@
-FROM ruby:2.2.0-wheezy
+FROM alpine
+
+RUN apk --update add \
+  ca-certificates \
+  ruby \
+  ruby-bundler \
+  ruby-dev && \
+  rm -rf /usr/share/ri
 
 RUN gem install tugboat
 
