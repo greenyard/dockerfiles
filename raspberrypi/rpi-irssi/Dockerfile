@@ -25,6 +25,6 @@ RUN rm /etc/localtime && \
     printf America/Los_Angeles > /etc/timezone
 
 # SUPPORT 256 COLOR
-ENV TERM=xterm-256color
+ENV TERM=screen-256color
 
 CMD ["irssi"]
