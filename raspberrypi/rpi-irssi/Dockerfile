@@ -1,20 +1,13 @@
-FROM resin/rpi-raspbian:jessie-2015-07-15
+FROM resin/rpi-raspbian:jessie-2015-08-12
 
-RUN \
+RUN  \
   apt-get update -y && \
-  apt-get install -yq --no-install-recommends \
-  ca-certificates \
+  apt-get install -yq \
   irssi \
-  irssi-scripts \
-  screen \
-  libwww-perl \
-  libwww-curl-perl \
-  libjson-perl \
-  liburi-query-perl \
   libnet-twitter-perl \
   libwww-shorten-perl \
   libjson-any-perl \
-  libio-socket-ssl-perl && \
+  libwww-curl-perl && \
   apt-get clean && \
   rm -rf \
     /var/lib/apt/lists/* \
