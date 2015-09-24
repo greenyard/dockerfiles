@@ -1,13 +1,27 @@
-FROM resin/rpi-raspbian:jessie-2015-08-12
+FROM resin/rpi-raspbian:wheezy-2015-08-12
+
+RUN apt-get update -y && \
+    apt-get install -yq \
+    libwww-curl-perl && \
+    rm -rf \
+      /var/lib/apt/lists/* \
+      /tmp/* \
+      /var/tmp/* \
+      /var/cache/man/* \
+      /var/cache/apt/* \
+      /usr/share/doc/* \
+      /usr/share/info/* \
+      /usr/share/man/*
+
+RUN echo "deb http://archive.raspbian.org/raspbian jessie main contrib non-free rpi firmware" >> /etc/apt/sources.list
 
 RUN  \
   apt-get update -y && \
-  apt-get install -yq \
+  apt-get install -yq wget \
   irssi \
   libnet-twitter-perl \
   libwww-shorten-perl \
-  libjson-any-perl \
-  libwww-curl-perl && \
+  libjson-any-perl && \
   apt-get clean && \
   rm -rf \
     /var/lib/apt/lists/* \
