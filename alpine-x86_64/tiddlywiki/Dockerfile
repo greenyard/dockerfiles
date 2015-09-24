@@ -1,8 +1,10 @@
 FROM alpine
 
-RUN apk --update add nodejs nodejs-dev
-
-RUN npm install -g tiddlywiki
+RUN apk --update add \
+      nodejs \
+      nodejs-dev \
+    && npm install -g \
+      tiddlywiki
 
 VOLUME /var/lib/tiddlywiki
 WORKDIR /var/lib/tiddlywiki
