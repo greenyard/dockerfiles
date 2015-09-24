@@ -7,6 +7,7 @@ RUN buildDeps='\
               libxslt-dev \
               make \
               ruby-dev \
+              ruby-nokogiri \
               zlib-dev \
               ' \
     && set -x \
@@ -17,7 +18,6 @@ RUN buildDeps='\
       ruby \
       ruby-json \
       yaml-dev \
-    && gem install nokogiri -- --use-system-libraries --with-xml2-include=/usr/include/libxml2 \
     && gem install \
       github-pages \
       jekyll \
