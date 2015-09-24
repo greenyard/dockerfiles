@@ -5,4 +5,4 @@ RUN apk --update add \
       perl-libwww \
       perl-json
 
-ENTRYPOINT ["irssi"]
+CMD ["irssi"]
